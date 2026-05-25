@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'menu/css/men.css' %}" rel="stylesheet">
+    <link type="text/css" href="{% static 'menu/css/menu.css' %}" rel="stylesheet">
+    <title>{{title}}</title>
+</head>
+<body>
+    <header>
+        <div>
+            <div class="logo">
+                <a href="/">Меню Ресторана</a>
+            </div>
+            <div class="nav">
+                <a href="/" class="nav-link">Главная</a>
+                <a href="{% url 'menu' %}" class="nav-link">Меню</a>
+                <a href="{% url 'contacts' %}" class="nav-link">Контакты</a>
+            </div>
+            <div class="header-right">
+    <a href="{% url 'cart' %}" class="cart-btn" style="text-decoration: none;">
+    Корзина <span>{{ user.carts.first.get_total_items|default:0 }}</span>
+</a>
+    
+    {% if user.is_authenticated %}
+        <!-- Если пользователь вошел -->
+        <span style="color: white; margin: 0 10px;">{{ user.username }}</span>
+        <a href="{% url 'logout' %}" class="auth-btn" style="text-decoration: none; background: linear-gradient(135deg, #e74c3c, #c0392b);">Выйти</a>
+    {% else %}
+        <!-- Если не вошел -->
+        <a href="{% url 'login' %}" class="auth-btn" style="text-decoration: none;">Вход</a>
+        <a href="{% url 'register' %}" class="auth-btn" style="text-decoration: none;">Регистрация</a>
+    {% endif %}
+</div>
+        </div>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer>
+        <p>&copy;2026. Все права защищены.</p>
+    </footer>
+</body>
+</html>

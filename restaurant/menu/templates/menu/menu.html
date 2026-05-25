@@ -1,0 +1,441 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="menu-title">Меню нашего ресторана!</h1>
+<div class="menu-container">
+    <details>
+        <summary>{{dish_categories_four_category_name}}</summary>
+        <p>{{dish_categories_four_category_description}}</p>
+
+        <h3>{{dish_one_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=3805b2f098198dcd858c6ecc65feb743_l-4054771-images-thumbs&n=13" alt="">
+        <p>{{dish_one_description}}</p>
+        <p>Цена: {{dish_one_price}} руб.</p>
+        <p>Доступность: {{dish_one_is_avaible}}</p>
+        <p>Время приготовления: {{dish_one_cooking_time_min}}</p>
+        <p>Каллорийность: {{dish_one_calories}} г.</p>
+        <p>Аллергены: {{dish_one_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="1">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_twelve_name}}</h3>
+        <img src="https://i.pinimg.com/originals/a6/03/77/a6037712009b48d0a2638afb2fb8d46a.jpg" alt="">
+        <p>{{dish_twelve_description}}</p>
+        <p>{{dish_twelve_price}}</p>
+        <p>{{dish_twelve_is_avaible}}</p>
+        <p>{{dish_twelve_cooking_time_min}}</p>
+        <p>{{dish_twelve_calories}}</p>
+        <p>{{dish_twelve_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="12">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+    </details>
+
+    <details>
+        <summary>{{dish_categories_one_category_name}}</summary>
+        <p>{{dish_categories_one_category_description}}</p>
+
+        <h3>{{dish_three_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=adafea74ff8970154da864f5d05b1c62aa81df03-10767730-images-thumbs&n=13" alt="">
+        <p>{{dish_three_description}}</p>
+        <p>{{dish_three_price}}</p>
+        <p>{{dish_three_is_avaible}}</p>
+        <p>{{dish_three_cooking_time_min}}</p>
+        <p>{{dish_three_calories}}</p>
+        <p>{{dish_three_allergens}}</p>
+       {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="3">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_four_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=55dbab53cac7f6ffcc9911a5cdd208a1f5e31499-4869221-images-thumbs&n=13" alt="">
+        <p>{{dish_four_description}}</p>
+        <p>{{dish_four_price}}</p>
+        <p>{{dish_four_is_avaible}}</p>
+        <p>{{dish_four_cooking_time_min}}</p>
+        <p>{{dish_four_calories}}</p>
+        <p>{{dish_four_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="4">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_six_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=e5aef0ee9ae2135523da7cc541983616_l-12569867-images-thumbs&n=13" alt="">
+        <p>{{dish_six_description}}</p>
+        <p>{{dish_six_price}}</p>
+        <p>{{dish_six_is_avaible}}</p>
+        <p>{{dish_six_cooking_time_min}}</p>
+        <p>{{dish_six_calories}}</p>
+        <p>{{dish_six_allergens}}</p>
+       {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="6">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_ten_name}}</h3>
+        <img src="https://white-kitchen.ru/wp-content/uploads/2025/09/burger-s-govyazhei-kotletoi-sirom-chedder-i-kartofelem-fri1-min-1536x1024-1.jpg" alt="">
+        <p>{{dish_ten_description}}</p>
+        <p>{{dish_ten_price}}</p>
+        <p>{{dish_ten_is_avaible}}</p>
+        <p>{{dish_ten_cooking_time_min}}</p>
+        <p>{{dish_ten_calories}}</p>
+        <p>{{dish_ten_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="10">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_seventeen_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=b689b2e9bb0dd95b946ca84078048977_l-5492576-images-thumbs&n=13" alt="">
+        <p>{{dish_seventeen_description}}</p>
+        <p>{{dish_seventeen_price}}</p>
+        <p>{{dish_seventeen_is_avaible}}</p>
+        <p>{{dish_seventeen_cooking_time_min}}</p>
+        <p>{{dish_seventeen_calories}}</p>
+        <p>{{dish_seventeen_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="17">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+    </details>
+
+    <details>
+        <summary>{{dish_categories_five_category_name}}</summary>
+        <p>{{dish_categories_five_category_description}}</p>
+
+        <h3>{{dish_seven_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/get-entity_search/1734588/1224151068/SUx182_2x" alt="">
+        <p>{{dish_seven_description}}</p>
+        <p>{{dish_seven_price}}</p>
+        <p>{{dish_seven_is_avaible}}</p>
+        <p>{{dish_seven_cooking_time_min}}</p>
+        <p>{{dish_seven_calories}}</p>
+        <p>{{dish_seven_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="7">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_thirteen_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=5bfa50f4c42dddd0c7c0876da3cad419_l-9229366-images-thumbs&n=13" alt="">
+        <p>{{dish_thirteen_description}}</p>
+        <p>{{dish_thirteen_price}}</p>
+        <p>{{dish_thirteen_is_avaible}}</p>
+        <p>{{dish_thirteen_cooking_time_min}}</p>
+        <p>{{dish_thirteen_calories}}</p>
+        <p>{{dish_thirteen_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="13">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_eighteen_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=addf5671b40ae0c85454869440b9b372d01e451f-12494025-images-thumbs&n=13" alt="">
+        <p>{{dish_eighteen_description}}</p>
+        <p>{{dish_eighteen_price}}</p>
+        <p>{{dish_eighteen_is_avaible}}</p>
+        <p>{{dish_eighteen_cooking_time_min}}</p>
+        <p>{{dish_eighteen_calories}}</p>
+        <p>{{dish_eighteen_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="18">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+    </details>
+
+    <details>
+        <summary>{{dish_categories_seven_category_name}}</summary>
+        <p>{{dish_categories_seven_category_description}}</p>
+
+        <h3>{{dish_eight_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=b83ca7016786913e32315b30d21ed235f25e5657-4946522-images-thumbs&n=13" alt="">
+        <p>{{dish_eight_description}}</p>
+        <p>{{dish_eight_price}}</p>
+        <p>{{dish_eight_is_avaible}}</p>
+        <p>{{dish_eight_cooking_time_min}}</p>
+        <p>{{dish_eight_calories}}</p>
+        <p>{{dish_eight_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="8">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_fourteen_name}}</h3>
+        <img src="https://img.ixbt.site/live/images/original/32/75/48/2024/10/16/13debe3369.jpg" alt="">
+        <p>{{dish_fourteen_description}}</p>
+        <p>{{dish_fourteen_price}}</p>
+        <p>{{dish_fourteen_is_avaible}}</p>
+        <p>{{dish_fourteen_cooking_time_min}}</p>
+        <p>{{dish_fourteen_calories}}</p>
+        <p>{{dish_fourteen_allergens}}</p>
+       {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="14">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_nineteen_name}}</h3>
+        <img src="https://image.made-in-china.com/2f0j00OvMWmSlEfTGC/Non-Dairy-Creamer-for-Tea.webp" alt="">
+        <p>{{dish_nineteen_description}}</p>
+        <p>{{dish_nineteen_price}}</p>
+        <p>{{dish_nineteen_is_avaible}}</p>
+        <p>{{dish_nineteen_cooking_time_min}}</p>
+        <p>{{dish_nineteen_calories}}</p>
+        <p>{{dish_nineteen_allergens}}</p>
+       {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="19">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+    </details>
+
+    <details>
+        <summary>{{dish_categories_eight_category_name}}</summary>
+        <p>{{dish_categories_eight_category_description}}</p>
+
+        <h3>{{dish_nine_name}}</h3>
+        <img src="https://static.mk.ru/upload/entities/2025/03/25/14/articles/facebookPicture/c7/fc/5c/81/c2569cc7ab8b5844cb15c0e57a0f501d.jpg" alt="">
+        <p>{{dish_nine_description}}</p>
+        <p>{{dish_nine_price}}</p>
+        <p>{{dish_nine_is_avaible}}</p>
+        <p>{{dish_nine_cooking_time_min}}</p>
+        <p>{{dish_nine_calories}}</p>
+        <p>{{dish_nine_allergens}}</p>
+       {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="9">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_fiveteen_name}}</h3>
+        <img src="https://images.gastronom.ru/CtSerq1cPYGxXzNAX77V6guv1UZStumSGwawFyH7xW0/pr:recipe-cover-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzE5NDAxZDRiLWUxOWEtNDFjMC04NTVkLWIzNTUxYjA1NjNmOS5qcGc.webp" alt="">
+        <p>{{dish_fiveteen_description}}</p>
+        <p>{{dish_fiveteen_price}}</p>
+        <p>{{dish_fiveteen_is_avaible}}</p>
+        <p>{{dish_fiveteen_cooking_time_min}}</p>
+        <p>{{dish_fiveteen_calories}}</p>
+        <p>{{dish_fiveteen_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="15">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_twenty_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=a130a6c604bffc4c3aad968598239df3_l-10674688-images-thumbs&n=13" alt="">
+        <p>{{dish_twenty_description}}</p>
+        <p>{{dish_twenty_price}}</p>
+        <p>{{dish_twenty_is_avaible}}</p>
+        <p>{{dish_twenty_cooking_time_min}}</p>
+        <p>{{dish_twenty_calories}}</p>
+        <p>{{dish_twenty_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="20">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+    </details>
+
+    <details>
+        <summary>{{dish_categories_three_category_name}}</summary>
+        <p>{{dish_categories_three_category_description}}</p>
+
+        <h3>{{dish_two_name}}</h3>
+        <img src="https://img.pravda.ru/image/preview/article/5/9/7/2325597_amp.jpeg" alt="">
+        <p>{{dish_two_description}}</p>
+        <p>{{dish_two_price}}</p>
+        <p>{{dish_two_is_avaible}}</p>
+        <p>{{dish_two_cooking_time_min}}</p>
+        <p>{{dish_two_calories}}</p>
+        <p>{{dish_two_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="2">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_eleven_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=96c4ab9b22e9c5de00846c0389c02e21_l-5281839-images-thumbs&n=13" alt="">
+        <p>{{dish_eleven_description}}</p>
+        <p>{{dish_eleven_price}}</p>
+        <p>{{dish_eleven_is_avaible}}</p>
+        <p>{{dish_eleven_cooking_time_min}}</p>
+        <p>{{dish_eleven_calories}}</p>
+        <p>{{dish_eleven_allergens}}</p>
+        {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="11">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+    </details>
+
+    <details>
+        <summary>{{dish_categories_two_category_name}}</summary>
+        <p>{{dish_categories_two_category_description}}</p>
+
+        <h3>{{dish_five_name}}</h3>
+        <img src="https://avatars.mds.yandex.net/i?id=48d7bbaea53dd658ca6eb9abb28485c2_l-5877464-images-thumbs&n=13" alt="">
+        <p>{{dish_five_description}}</p>
+        <p>{{dish_five_price}}</p>
+        <p>{{dish_five_is_avaible}}</p>
+        <p>{{dish_five_cooking_time_min}}</p>
+        <p>{{dish_five_calories}}</p>
+        <p>{{dish_five_allergens}}</p>
+       {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="5">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+
+        <h3>{{dish_sixteen_name}}</h3>
+        <img src="https://images.news.ru/2025/07/12/AHBtfUJxJ5PW6MVpQF3uHA8i4BudedBFxlsQOhRo_780.png" alt="">
+        <p>{{dish_sixteen_description}}</p>
+        <p>{{dish_sixteen_price}}</p>
+        <p>{{dish_sixteen_is_avaible}}</p>
+        <p>{{dish_sixteen_cooking_time_min}}</p>
+        <p>{{dish_sixteen_calories}}</p>
+        <p>{{dish_sixteen_allergens}}</p>
+       {% if user.is_authenticated %}
+    <form method="post" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="dish_id" value="16">  <!-- ID из базы -->
+        <input type="hidden" name="quantity" value="1">
+        <button type="submit" class="add-corzina">Добавить в корзину</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6;">Войдите, чтобы добавить</a>
+{% endif %}
+
+    </details>
+</div>
+{% endblock %}

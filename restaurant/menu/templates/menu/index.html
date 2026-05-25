@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="privetstvie">
+    <h1>Добро пожаловать в наш ресторан! Вкусные блюда, свежие ингредиенты и уютная атмосфера ждут вас.</h1>
+</div>
+<div class="descrip">
+    <p>Наш ресторан - это место, где вкусная еда и уютная атмосфера создают приятные моменты для гостей. Мы готовим блюда из свежих ингредиентов и уделяем внимание каждому заказу. Приходите насладиться качественной кухней и отличным сервисом.</p>
+</div>
+<div class="photo-res">
+    <img src="https://img.freepik.com/premium-photo/fine-dining-elegance-restaurant-tables-generative-ai_431161-19413.jpg?semt=ais_hybrid&w=740" alt="">
+</div>
+<h2 class="popular-dish">Популярные блюда</h2>
+<div class="dishes-container">
+    <div class="popular-dish-one">
+        <h2>{{dish_dish_name_one_best}}</h2>
+        <img src="https://avatars.mds.yandex.net/i?id=adafea74ff8970154da864f5d05b1c62aa81df03-10767730-images-thumbs&n=13" alt="">
+        <h3>{{dish_price_one_best}} руб.</h3>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'add_to_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="dish_id" value="3">  <!-- Здесь нужен правильный ID -->
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit" class="add-corzina">Добавить в корзину</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6; text-decoration: none; display: block;">Войдите, чтобы добавить</a>
+    {% endif %}
+
+    </div>
+    <div class="popular-dish-two">
+        <h2>{{dish_dish_name_two_best}}</h2>
+        <img src="https://avatars.mds.yandex.net/i?id=55dbab53cac7f6ffcc9911a5cdd208a1f5e31499-4869221-images-thumbs&n=13" alt="">
+        <h3>{{dish_price_two_best}} руб.</h3>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'add_to_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="dish_id" value="4">  <!-- Здесь нужен правильный ID -->
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit" class="add-corzina">Добавить в корзину</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6; text-decoration: none; display: block;">Войдите, чтобы добавить</a>
+    {% endif %}
+    </div>
+    <div class="popular-dish-three">
+        <h2>{{dish_dish_name_three_best}}</h2>
+        <img src="https://avatars.mds.yandex.net/i?id=addf5671b40ae0c85454869440b9b372d01e451f-12494025-images-thumbs&n=13" alt="">
+        <h3>{{dish_price_three_best}} руб.</h3>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'add_to_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="dish_id" value="18">  <!-- Здесь нужен правильный ID -->
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit" class="add-corzina">Добавить в корзину</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6; text-decoration: none; display: block;">Войдите, чтобы добавить</a>
+    {% endif %}
+    </div>
+    <div class="popular-dish-four">
+        <h2>{{dish_dish_name_four_best}}</h2>
+        <img src="https://avatars.mds.yandex.net/get-entity_search/1734588/1224151068/SUx182_2x" alt="">
+        <h3>{{dish_price_four_best}} руб.</h3>
+        {% if user.is_authenticated %}
+        <form method="post" action="{% url 'add_to_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="dish_id" value="7">  <!-- Здесь нужен правильный ID -->
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit" class="add-corzina">Добавить в корзину</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="add-corzina" style="background: #95a5a6; text-decoration: none; display: block;">Войдите, чтобы добавить</a>
+    {% endif %}
+    </div>
+</div>
+<a href="{% url 'menu' %}" class="get-menu">
+    Перейти к меню
+</a>
+{% endblock %}
